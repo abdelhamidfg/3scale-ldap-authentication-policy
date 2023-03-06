@@ -1,0 +1,6 @@
+luarocks {
+	group 'production' {
+		module { 'lua_pack' },
+		module { 'lua-resty-ldap' },
+	}
+}
