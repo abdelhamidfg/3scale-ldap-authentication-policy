@@ -7,7 +7,7 @@ USER root
 WORKDIR /opt/app-root/src/
 
 RUN dnf install -y perl-App-cpanminus gcc git
-
+RUN git config --global url."git@github.com:".insteadOf git://github.com/
 ENV LUA_PATH="/usr/lib64/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;"
 
 COPY Roverfile .
