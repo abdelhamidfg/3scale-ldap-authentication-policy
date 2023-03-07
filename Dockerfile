@@ -6,7 +6,7 @@ FROM ${IMAGE}
 USER root
 WORKDIR /opt/app-root/src/
 
-RUN dnf install -y perl-App-cpanminus gcc git openldap-clients
+RUN dnf install -y perl-App-cpanminus gcc git 
 
 RUN git config --global url.https://github.com/.insteadOf git://github.com/
 
