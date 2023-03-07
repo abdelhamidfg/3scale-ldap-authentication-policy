@@ -1,1 +1,3 @@
-lualdap 1.3.0-1||productionbash-4.4
+lua_pack 2.0.0-0||productionbash-4.4
+lpeg 1.0.2-1||productionbash-4.4
+lua-resty-ldap 0.1.0-0||productionbash-4.4
