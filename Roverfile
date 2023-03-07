@@ -3,5 +3,7 @@ luarocks {
 		module { 'lua_pack' },
 		module { 'lpeg' },
 		module { 'lua-resty-ldap' },
+		module { 'lualdap' },
+		
 	}
 }
