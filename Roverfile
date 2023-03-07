@@ -1,6 +1,8 @@
 luarocks {
 	group 'production' {
-		module { 'lualdap' },
 		
+		module { 'lua_pack' },
+		module { 'lpeg' },
+		module { 'lua-resty-ldap' },
 	}
 }
