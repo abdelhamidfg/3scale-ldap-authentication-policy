@@ -47,7 +47,7 @@ The policy uses lua-resty-ldap dependency for connecting with an LDAP server whi
   source:
       type: Git
       git:
-       uri: 'https://github.com/abdelhamidfg/ldap-authentication-policy'
+       uri: 'https://github.com/abdelhamidfg/3scale-ldap-authentication-policy'
  ```
 4. start openshift build.
 ```shell
