@@ -82,12 +82,49 @@ spec:
         name: ldap-authn-policy
       version: 1.0.0
 ```
+5. Create 3scale CustomPolicyDefinition Custom Resource 
+ in order to view the policy configuration in the API Manager policy editor UI , the custom policy should be registered using customPolicyDefinition custom resource
 
+ ```shell
+apiVersion: capabilities.3scale.net/v1beta1
+kind: CustomPolicyDefinition
+metadata:
+  name: custompolicydefinition-ldap-authn
+spec:
+  name: "ldap_authn"
+  version: "1.0.0"
+  schema:
+    name: "ldap_authn"
+    version: "1.0.0"
+    summary: "The policy checks for valid credentials in the Authorization header , extracts the user name and password from an HTTP Basic request and binds to LDAP using these credentials to check if the user name and password are valid"
+    $schema: "http://json-schema.org/draft-07/schema#"
+    configuration:
+      type: "object"
+      properties:
+        ldap_host:
+            description: "host of ldap server"
+            type: "string"
+        ldap_port:
+            description: "port of ldap server"
+            type: "number"
+        base_dn:
+            description: "Base dn of the LDAP server"
+            type: "string"
+        uid:
+            description: "Attribute to be used to search the user"
+            type: "string"
+        error_message	:
+            description: "Error message to show to user when traffic is blocked	"
+            type: "string"
+      providerAccountRef:
+       name: threescale-provider-account
+ ```
+For more informatino about this step ,check the [documentation](https://github.com/3scale/3scale-operator/blob/master/doc/custompolicydefinition-reference.md#custompolicydefinitionschemaspec)
 # 1. Testing the policy
 1. Create an API Product and add the policy to the policy chain after the API Cast policy
 2. provides configuration parameters  
 
-```shell
+```shell       
 {
       "name": "ldap_authn",
       "version": "1.0.0",
