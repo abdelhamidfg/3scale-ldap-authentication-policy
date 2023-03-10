@@ -1,0 +1,47 @@
+{
+    "$schema": "http://apicast.io/policy-v1/schema#manifest#",
+    "name": "LDAP Authentication Policy",
+    "summary": "The policy check for valid credentials in the Authorization header.",
+    "description": "The policy check for valid credentials in the Authorization header.",
+    "version": "1.0.0",
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "error_message": {
+         "title": "Error message",
+         "description": "Error message to show to user when traffic is blocked",
+         "type": "string"
+       },
+        
+         "ldap_host": {
+         "title": "ldap_host",
+         "description": "Host on which the LDAP server is running",
+         "type": "string"
+       },
+       "ldap_port": {
+        "title": "ldap_port",
+        "description": "port where the LDAP server is listening",
+        "type": "number"
+      },
+      "base_dn": {
+        "title": "base_dn",
+        "description": "Base dn of the LDAP server. For example, ou=users,dc=example,dc=org.",
+        "type": "string"
+      },
+      "uid": {
+        "title": "user attrbuite",
+        "description": "Attribute to be used to search the user; e.g., uid.",
+        "type": "string"
+      }
+    
+
+       
+       
+        
+       },
+       "required": ["ldap_host","ldap_port","base_dn","uid" ]
+       
+     
+     }
+     
+  }
